@@ -36,13 +36,11 @@ $sch=$_POST['sch'];
                              <?php
                                if (isset($_SESSION['products_id'])) {
                                  ?>
-                                   <a href="change.php?id=<?php echo $row['products_id']; ?>"
-                                 <?php
-                               }else {
-                                 ?>
+                                   <a href="change.php?id=<?php echo $row['products_id']; ?>" 
+                               <?php }else { ?>
                                  <a href="order.php?id=<?php echo $row['products_id']; ?>
                                  <?php
-                               }
+}
                                 ?>"
                                  class="btn btn-sm btn-primary">Buy</a>
                              </div>

@@ -39,6 +39,8 @@ body{
           <td><?php echo $row['bill_product_qty']; ?></td>
           <td><?php echo $row['bill_price']; ?></td>
           <td><?php echo $row['bill_result_price']; ?></td>
+          <td><a href="addcart.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-secondary">Confirm payment</a></td>
+
         </tr>
         <?php
         $n++;

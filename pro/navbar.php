@@ -59,10 +59,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
               </button>
                   <div class="dropdown-menu">
                       <a class="dropdown-item" href="addcart.php">ตะกร้าสินค้า</a>
-                      <a class="dropdown-item" href="order-history.php">ยืนยันการชำระเงิน</a>
                       <a class="dropdown-item" href="order-history.php">ประวัติการสั่งซื้อ</a>
                       <a class="dropdown-item" href="about_me.php">ข้อมูลของฉัน</a>
-                      <a class="dropdown-item" href="change_name.php">เปลี่ยนชื่อ</a>
                       <a class="dropdown-item" href="logout.php">Logout</a>
                   </div>
             </div>
