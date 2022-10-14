@@ -9,9 +9,16 @@ if (isset($_SESSION['user_id'])) {
     
 }
 body{
-  background-image: url("img/bg1.png");
-}
+   background-image: url("img/bg1.jpg");
+ }
 
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
+ }
 
 
 

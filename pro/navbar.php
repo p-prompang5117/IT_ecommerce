@@ -18,6 +18,18 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   *{
     font-family: 'Mali', cursive;
   }
+
+  body{
+   background-image: url("img/bg1.jpg");
+ }
+
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
+ }
 </style>
     <title>BOOM ผลิตภัณฑ์อาหารเสริม</title>
   </head>

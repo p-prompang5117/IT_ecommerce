@@ -35,16 +35,27 @@ if (isset($_SESSION['user_tier'])) {
  ?>
  <style media="screen">
  body{
-   background-image: url("img/bg1.png");
+   background-image: url("img/bg1.jpg");
+ }
+
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
  }
  </style>
+
+
 <body>
-  <div class="container" >
-    <div class="row" >
-    <a href="add-product.php" class="btn btn-primary">Add-product</a>
+  <div class="container">
+    <div class="row">
+      <a href="add-product.php" class="btn btn-primary">Add-product</a>
     </div>
+    <div class="row">
     <div class="table-responsive">
-      <table style="background:#f2bcf2" class="table">
+      <table style="background:#f2bcf2;" class="table">
 <thead>
   <tr>
     <th scope="col">#</th>
@@ -82,6 +93,7 @@ if (isset($_SESSION['user_tier'])) {
 </tbody>
 </table>
     </div>
+  </div>
   </div>
 </body>
 <script type="text/javascript">
