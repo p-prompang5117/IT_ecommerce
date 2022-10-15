@@ -41,9 +41,11 @@ if (isset($_SESSION['user_id'])) {
       while ($row = mysqli_fetch_array($result)) {
         $status = $row['bill_status'];
         if ($status == "not paid"){
-          $status = "ชำระเงินแล้ว";
+          $status = "ยังไม่ชำระ";
         }else if($status == "paid"){
-          $status = "รอการชำระเงิน";
+          $status = "ชำระเงินแล้ว";
+        }else if($status == "pending"){
+          $status = "รอการยืนยัน";
         }
         ?>
         <tr>
