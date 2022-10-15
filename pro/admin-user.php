@@ -35,15 +35,7 @@ if (isset($_SESSION['user_tier'])) {
  ?>
  <style media="screen">
  body{
-   background-image: url("img/bg1.jpg");
- }
-
- .container{
-    padding-top: 10px;
- }
-
- .row{
-    padding-top: 10px;
+   background-image: url("img/bg1.png");
  }
  </style>
 <body>

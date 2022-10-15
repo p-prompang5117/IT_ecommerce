@@ -152,14 +152,11 @@ padding-top: 20px;
                                   <?php
                                     if (isset($_SESSION['products_id'])) {
                                       ?>
-                                      <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
-                                      <a href="change.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
+                                      <a href="change.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-success">Buy</a>
                                       <?php
                                     }else {
                                       ?>
-                                      <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
-                                      <a href="order.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
-                                      
+                                      <a href="order.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-success">Buy</a>
                                       <?php
                                     }
                                      ?>
@@ -190,15 +187,14 @@ padding-top: 20px;
                                 <?php
                                   if (isset($_SESSION['products_id'])) {
                                     ?>
-                                    <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
                                     <a href="change.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
                                     <?php
                                   }else {
                                     ?>
-                                    <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
                                     <a href="order.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
-                                    
-                                    <?php } ?>
+                                    <?php
+                                  }
+                                   ?>
 
                                 </div>
                               </div>

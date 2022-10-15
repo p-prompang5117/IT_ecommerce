@@ -4,17 +4,9 @@ require_once 'connect.php';
 if (isset($_SESSION['user_id'])) {
 ?>
 <style media="screen">
- body{
-   background-image: url("img/bg1.jpg");
- }
-
- .container{
-    padding-top: 10px;
- }
-
- .row{
-    padding-top: 10px;
- }
+body{
+  background-image: url("img/bg1.png");
+}
 </style>
 <body>
   <div class="container">
@@ -47,8 +39,6 @@ if (isset($_SESSION['user_id'])) {
           <td><?php echo $row['bill_product_qty']; ?></td>
           <td><?php echo $row['bill_price']; ?></td>
           <td><?php echo $row['bill_result_price']; ?></td>
-          <td><a href="addcart.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-secondary">Confirm payment</a></td>
-
         </tr>
         <?php
         $n++;

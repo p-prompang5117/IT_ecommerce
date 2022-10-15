@@ -35,15 +35,7 @@ if (isset($_SESSION['user_tier'])) {
  ?>
  <style media="screen">
  body{
-   background-image: url("img/bg1.jpg");
- }
-
- .container{
-    padding-top: 10px;
- }
-
- .row{
-    padding-top: 10px;
+   background-image: url("img/bg1.png");
  }
  </style>
 <body>
@@ -53,7 +45,6 @@ if (isset($_SESSION['user_tier'])) {
         category
       </button>
     </div>
-    <div class="row">
     <div class="table-responsive">
       <table style="background:#f2bcf2" class="table">
 <thead>
@@ -77,7 +68,6 @@ if (isset($_SESSION['user_tier'])) {
      ?>
 </tbody>
 </table>
-</div>
     </div>
   </div>
 </body>

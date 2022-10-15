@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2022 at 06:49 PM
+-- Generation Time: Oct 15, 2022 at 02:47 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -33,19 +33,22 @@ CREATE TABLE `bill` (
   `bill_customer` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `bill_price` int(11) NOT NULL,
   `bill_result_price` int(11) NOT NULL,
-  `bill_product_qty` int(11) NOT NULL
+  `bill_product_qty` int(11) NOT NULL,
+  `bill_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'not paid',
+  `bill_img` text COLLATE utf8_unicode_ci NOT NULL,
+  `bill_timestamp` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`bill_id`, `bill_products_name`, `bill_customer`, `bill_price`, `bill_result_price`, `bill_product_qty`) VALUES
-(22, 'Room coffee', '1', 299, 299, 1),
-(23, 'Room Fiberry', '1', 590, 590, 1),
-(24, 'Boom D-nax', '1', 590, 590, 1),
-(25, 'Boom cocoa', '1', 399, 399, 1),
-(26, 'Boom cocoa', '9', 399, 399, 1);
+INSERT INTO `bill` (`bill_id`, `bill_products_name`, `bill_customer`, `bill_price`, `bill_result_price`, `bill_product_qty`, `bill_status`, `bill_img`, `bill_timestamp`) VALUES
+(22, 'Room coffee', '1', 299, 299, 1, 'not paid', '', '2022-10-15'),
+(23, 'Room Fiberry', '1', 590, 590, 1, 'not paid', '', '2022-10-15'),
+(24, 'Boom D-nax', '1', 590, 590, 1, 'not paid', '', '2022-10-15'),
+(25, 'Boom cocoa', '1', 399, 399, 1, 'not paid', '', '2022-10-15'),
+(26, 'Boom cocoa', '9', 399, 399, 1, 'not paid', '', '2022-10-15');
 
 -- --------------------------------------------------------
 
@@ -132,7 +135,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_email`, `user_pass`, `user_name`, `user_tier`) VALUES
-(1, 'admin@admin.com', 'admin', 'BOOM', 0),
+(1, 'admin@admin', 'admin', 'BOOM', 0),
 (6, 'Doom@doom', 'oom', 'Doomey', 1),
 (7, '1', '1', '1', 0),
 (9, 'test@test', 'test', 'test_customer', 1);
