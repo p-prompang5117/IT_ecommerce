@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
             <input class="form-control" type="file" id="formFile">
     </div>
    
-    <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ">
+    <input type="submit" class="btn btn-sm btn-primary">
 
 </form>
 

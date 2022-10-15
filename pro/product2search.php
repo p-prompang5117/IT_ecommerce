@@ -4,9 +4,17 @@ require_once 'connect.php';
 $sch=$_POST['sch'];
  ?>
    <style media="screen">
-   body{
-     background-image: url("img/bg1.png");
-   }
+ body{
+   background-image: url("img/bg1.jpg");
+ }
+
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
+ }
    </style>
   <body>
      <div class="album py-5">
@@ -31,14 +39,12 @@ $sch=$_POST['sch'];
                              <div class="btn-group">
                              <?php
                                if (isset($_SESSION['products_id'])) {
-                                 ?>
-                                   <a href="change.php?id=<?php echo $row['products_id']; ?>" 
+                                 ?> <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
+                                    <a href="change.php?id=<?php echo $row['products_id']; ?>"> </a>
                                <?php }else { ?>
-                                 <a href="order.php?id=<?php echo $row['products_id']; ?>
-                                 <?php
-}
-                                ?>"
-                                 class="btn btn-sm btn-primary">Buy</a>
+                                    <a href="addcart.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
+                                    <a href="order.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
+                               <?php } ?>
                              </div>
                            </div>
                          </div>
