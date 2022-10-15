@@ -19,7 +19,17 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <style media="screen">
 body{
-  background-image: url("img/bg1.png");
+  body{
+   background-image: url("img/bg1.jpg");
+ }
+
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
+ }
 }
 </style>
 <body>

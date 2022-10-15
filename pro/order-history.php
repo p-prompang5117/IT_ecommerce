@@ -4,9 +4,17 @@ require_once 'connect.php';
 if (isset($_SESSION['user_id'])) {
 ?>
 <style media="screen">
-body{
-  background-image: url("img/bg1.png");
-}
+ body{
+   background-image: url("img/bg1.jpg");
+ }
+
+ .container{
+    padding-top: 10px;
+ }
+
+ .row{
+    padding-top: 10px;
+ }
 </style>
 <body>
   <div class="container">
@@ -20,6 +28,8 @@ body{
     <th scope="col">จำนวนที่สั่งซื้อ</th>
     <th scope="col">ราคาสินค้า</th>
     <th scope="col">ราคารวมสินค้า</th>
+    <th scope="col">สถานะ</th>
+    <th scope="col">เวลา</th>
   </tr>
 </thead>
 <tbody>
@@ -29,6 +39,12 @@ body{
     $sql = ("SELECT * FROM bill WHERE bill_customer='$id'");
     $result=$mysqli->query($sql);
       while ($row = mysqli_fetch_array($result)) {
+        $status = $row['bill_status'];
+        if ($status == "not paid"){
+          $status = "ชำระเงินแล้ว";
+        }else if($status == "paid"){
+          $status = "รอการชำระเงิน";
+        }
         ?>
         <tr>
           <th scope="row"><?php echo $n; ?></th>
@@ -39,6 +55,11 @@ body{
           <td><?php echo $row['bill_product_qty']; ?></td>
           <td><?php echo $row['bill_price']; ?></td>
           <td><?php echo $row['bill_result_price']; ?></td>
+          <td><?php echo $status; ?></td>
+          <td><?php echo $row['bill_timestamp']; ?></td>
+          <?php if ($row['bill_status'] == "not paid"){ ?>
+          <td><a href="billconfirm.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-secondary">Confirm payment</a></td>
+          <?php }  ?>
         </tr>
         <?php
         $n++;

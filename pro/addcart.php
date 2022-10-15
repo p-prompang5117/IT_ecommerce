@@ -45,6 +45,7 @@ body{
     $result=$mysqli->query($sql);
       while ($row = mysqli_fetch_array($result)) {
         ?>
+        <form action="" method="post">
         <tr>
           <th scope="row"><?php echo $n; ?></th>
           <td ><?php echo $row['bill_products_name']; ?></td>
@@ -52,7 +53,7 @@ body{
             echo $_SESSION['user_name'];
           } ?></td>
           <td> 
-            <center><input type="text" style="width:auto" class="form-control" value="<?php echo $row['bill_product_qty']; ?>"> </center>
+            <center><input type="number" min="1" step="1" style="width:auto" class="form-control" value="<?php echo $row['bill_product_qty']; ?>"> </center>
             
         
           </td>
@@ -61,12 +62,16 @@ body{
           <td><a href="order.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
           <td> <input type="checkbox" name="checkorder" id="checkorder" checked> </td>
         </tr>
+
         <?php
         $n++;
       }
      ?>
+          <th> <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
+
 </tbody>
 </table>
+</form>
     </div>
   </div>
 </body>
