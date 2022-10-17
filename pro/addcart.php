@@ -78,12 +78,24 @@ body{
             echo $_SESSION['user_name'];
           } ?></td>
           <td> 
-            <center><input type="number" min="1" step="1" style="width:auto" class="form-control" value="<?php echo $row['bill_product_qty']; ?>"> </center>
+            <center><input type="number" min="1" step="1" style="width:auto" class="form-control" value="<?php echo $row['bill_product_qty']; ?>" id="qtydial" name="qtydial"> </center>
+            <script>
+              document.getElementById("qtydial").onchange = function() {myFunction()};
+              function myFunction() {
+                var x = parseInt(document.getElementById("qtydial").value);
+                var y = parseInt(document.getElementById("sump").textContent);
+                y = y * x ;
+                
+
+                document.getElementById("sump").textContent = y; 
+
+              }
+            </script>
             
         
           </td>
           <td><?php echo $row['bill_price']; ?></td>
-          <td><?php echo $row['bill_result_price']; ?></td>
+          <td> <span name="sump" id="sump"><?php echo $row['bill_result_price']; ?></span> </td>
           <td><a href="del-products-get.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
           <td> <input type="checkbox" name="checkorder" id="checkorder" checked> </td>
         </tr>
@@ -93,7 +105,6 @@ body{
       }
      ?>
           <th> <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
-          <th>  <a href="ordet-buy-success.php" class="btn btn-danger" id="buy">ลบสินค้า</a> </th>
 
 </tbody>
 </table>

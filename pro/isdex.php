@@ -157,7 +157,7 @@ padding-top: 20px;
                                       <?php
                                     }else {
                                       ?>
-                                      <a href="addcart.php?adding_id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-secondary">Add to cart</a>
+                                      <a href="addcart.php?adding_id=<?php echo $row['products_id']; ?> " class="btn btn-sm btn-secondary">Add to cart</a>
                                       <a href="order.php?id=<?php echo $row['products_id']; ?>" class="btn btn-sm btn-primary">Buy</a>
                                       
                                       <?php

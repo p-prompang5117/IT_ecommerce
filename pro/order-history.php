@@ -46,6 +46,8 @@ if (isset($_SESSION['user_id'])) {
           $status = "ชำระเงินแล้ว";
         }else if($status == "pending"){
           $status = "รอการยืนยัน";
+        }else{
+          $status = "ในตะกร้า";
         }
         ?>
         <tr>
