@@ -29,14 +29,14 @@ if (isset($_POST['bill_submit'])){
         {  echo '<script type="text/javascript">
                    swal({
                        icon: "success",
-                       text: "แก้ไขสินค้าเสร็จสิ้น",
-                       title: "ยินดีด้วย",
+                       text: "ยืนยันการชำระเงินเสร็จสิ้น โปรดรอ 2-3 วันทำการ",
+                       title: "ยืนยันการชำระเงินเสร็จสิ้น",
                        buttons: {
                          ok: "ตกลง",
                        }
                      })
                      .then((value)=> {
-                       window.location.href = "admin-product.php"
+                       window.location.href = "order-history.php"
                      })
                </script>';
              }

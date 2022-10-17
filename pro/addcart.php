@@ -41,7 +41,7 @@ body{
     <?php
     $id=$_SESSION['user_id'];
     $n=1;
-    $sql = ("SELECT * FROM bill WHERE bill_customer='$id'");
+    $sql = ("SELECT * FROM bill WHERE bill_customer='$id' AND bill_status = 'cart'");
     $result=$mysqli->query($sql);
       while ($row = mysqli_fetch_array($result)) {
         ?>
