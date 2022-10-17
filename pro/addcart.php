@@ -82,19 +82,24 @@ body{
             <script>
               document.getElementById("qtydial").onchange = function() {myFunction()};
               function myFunction() {
+
                 var x = parseInt(document.getElementById("qtydial").value);
-                var y = parseInt(document.getElementById("sump").textContent);
-                y = y * x ;
+                var y = parseInt(document.getElementById("bill_price").textContent);
+                var z = y * x ;
                 
+                console.log(x) ;
+                console.log(y) ;
+                console.log(z) ;
+                console.log('\n') ;
 
-                document.getElementById("sump").textContent = y; 
-
+                document.getElementById("sump").textContent = z; 
+                
               }
             </script>
             
         
           </td>
-          <td><?php echo $row['bill_price']; ?></td>
+          <td><span id ="bill_price"> <?php echo $row['bill_price']; ?> </span></td>
           <td> <span name="sump" id="sump"><?php echo $row['bill_result_price']; ?></span> </td>
           <td><a href="del-products-get.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
           <td> <input type="checkbox" name="checkorder" id="checkorder" checked> </td>
