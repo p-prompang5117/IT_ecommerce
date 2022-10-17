@@ -68,6 +68,7 @@ body{
       }
      ?>
           <th> <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
+          <th> <input type="submit" class="btn btn-sm btn-danger" value="ลบสินค้่าทั้งหมด"> </th>
 
 </tbody>
 </table>

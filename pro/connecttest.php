@@ -22,6 +22,8 @@ if (isset($_POST['bill_submit'])){
     bill_img = '$file'
     WHERE bill_id = '$bill_id' ";
 
+    echo $sql;
+
 
     $update = ($mysqli->query($sql));
     if ($update) {
