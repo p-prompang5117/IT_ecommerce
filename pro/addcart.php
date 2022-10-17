@@ -1,7 +1,31 @@
 <?php
 require_once 'navbar.php';
 require_once 'connect.php';
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])){
+  if (isset($_GET['adding_id'])){
+    $addid=$_GET['adding_id'];
+    $userid=$_SESSION['user_id'];
+    $sql = ("SELECT * FROM products WHERE products_id=$addid");
+    $result=$mysqli->query($sql);
+    $row = mysqli_fetch_array($result);
+    $prodname=$row['products_name'];
+    $prodprice=$row['products__price'];
+
+    $sql = ("SELECT * FROM bill WHERE bill_customer='$addid' AND bill_status = 'cart'");
+    $result=$mysqli->query($sql);
+    $row = mysqli_fetch_array($result);
+
+    $billprice = 1;
+    $sumprice = $prodprice * $billprice ;
+
+
+    $sql = "INSERT INTO bill (bill_id, bill_products_name, bill_customer, bill_price, bill_result_price, bill_product_qty, bill_status, bill_img,bill_timestamp) 
+    VALUES (NULL, '$prodname', '$userid', '$prodprice', '$sumprice', '$billprice', 'cart', NULL, current_timestamp());";
+    $result=$mysqli->query($sql);
+
+ }
+
+
 ?>
 <style media="screen">
 .table td, .table th{
@@ -20,6 +44,7 @@ body{
     padding-top: 10px;
  }
 
+ 
 
 
 </style>

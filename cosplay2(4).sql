@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2022 at 02:47 AM
+-- Generation Time: Oct 17, 2022 at 12:03 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -34,8 +34,8 @@ CREATE TABLE `bill` (
   `bill_price` int(11) NOT NULL,
   `bill_result_price` int(11) NOT NULL,
   `bill_product_qty` int(11) NOT NULL,
-  `bill_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'not paid',
-  `bill_img` text COLLATE utf8_unicode_ci NOT NULL,
+  `bill_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'not paid' COMMENT 'cart/paid/not paid/pending',
+  `bill_img` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `bill_timestamp` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -44,11 +44,15 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`bill_id`, `bill_products_name`, `bill_customer`, `bill_price`, `bill_result_price`, `bill_product_qty`, `bill_status`, `bill_img`, `bill_timestamp`) VALUES
-(22, 'Room coffee', '1', 299, 299, 1, 'not paid', '', '2022-10-15'),
-(23, 'Room Fiberry', '1', 590, 590, 1, 'not paid', '', '2022-10-15'),
-(24, 'Boom D-nax', '1', 590, 590, 1, 'not paid', '', '2022-10-15'),
-(25, 'Boom cocoa', '1', 399, 399, 1, 'not paid', '', '2022-10-15'),
-(26, 'Boom cocoa', '9', 399, 399, 1, 'not paid', '', '2022-10-15');
+(22, 'Room coffee', '1', 299, 299, 1, 'pending', '16pf.PNG', '2022-10-15'),
+(23, 'Room Fiberry', '1', 590, 590, 1, 'not paid', 'big-five.PNG', '2022-10-15'),
+(24, 'Boom D-nax', '1', 590, 590, 1, 'pending', 'big-five.PNG', '2022-10-15'),
+(25, 'Boom cocoa', '9', 399, 399, 1, 'paid', '', '2022-10-15'),
+(26, 'Boom cocoa', '9', 399, 399, 1, 'not paid', '', '2022-10-15'),
+(30, 'Room coffee', '1', 299, 299, 1, 'cart', '', '2022-10-15'),
+(41, 'Boom Collagen', '1', 590, 590, 1, 'cart', NULL, '2022-10-17'),
+(42, 'Boom Collagen', '1', 590, 590, 1, 'cart', NULL, '2022-10-17'),
+(43, 'Boom D-nax', '1', 590, 590, 1, 'cart', NULL, '2022-10-17');
 
 -- --------------------------------------------------------
 
@@ -137,7 +141,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `user_email`, `user_pass`, `user_name`, `user_tier`) VALUES
 (1, 'admin@admin', 'admin', 'BOOM', 0),
 (6, 'Doom@doom', 'oom', 'Doomey', 1),
-(7, '1', '1', '1', 0),
 (9, 'test@test', 'test', 'test_customer', 1);
 
 --
@@ -182,7 +185,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `category`
