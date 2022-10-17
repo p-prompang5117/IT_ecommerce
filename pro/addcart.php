@@ -70,7 +70,8 @@ body{
     $result=$mysqli->query($sql);
       while ($row = mysqli_fetch_array($result)) {
         ?>
-        <form action="" method="post">
+
+        <form action="buy-get.php" method="post">
         <tr>
           <th scope="row"><?php echo $n; ?></th>
           <td ><?php echo $row['bill_products_name']; ?></td>
@@ -96,20 +97,27 @@ body{
                 
               }
             </script>
+              <input type="hidden" name="bid" value="<?php echo $row['bill_id']; ?>">
+              <input type="hidden" name="prodname" value="<?php echo $row['bill_products_name']; ?>"> 
+              <input type="hidden" name="prodprice" value="<?php echo $row['bill_price']; ?>"> 
+           
             
-        
+           
           </td>
           <td><span id ="bill_price"> <?php echo $row['bill_price']; ?> </span></td>
-          <td> <span name="sump" id="sump"><?php echo $row['bill_result_price']; ?></span> </td>
-          <td><a href="del-products-get.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
-          <td> <input type="checkbox" name="checkorder" id="checkorder" checked> </td>
+           <td> <span name="sump" id="sump"><?php echo $row['bill_result_price']; ?></span> </td> 
+          <!--<td><a href="buy-get.php?id=<?php echo $row['bill_id']; ?>&name=<?php echo $row['bill_products_name']; ?>&price=<?php echo $row['bill_result_price']; ?>" class="btn btn-sm btn-primary">ซื้อสินค้า</a></td> -->
+
+          <th> <input type="submit" name="addsubmit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
+          
+          <td><a href="del-products-get.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">ลบออกจากตะกร้า</a></td>
         </tr>
 
         <?php
         $n++;
       }
      ?>
-          <th> <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
+          
 
 </tbody>
 </table>

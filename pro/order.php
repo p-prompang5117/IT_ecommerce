@@ -33,16 +33,33 @@ if (isset($_SESSION['user_id'])) {
       if (!isset($_SESSION['quantity'])) {
         $_SESSION['quantity'] = 1;
       }
+      
+
+
       $pid=$_SESSION['products_id'];
       $sql = ("SELECT * FROM products WHERE products_id=$pid");
       $result=$mysqli->query($sql);
       $row = mysqli_fetch_array($result);
+      
           ?>
           <tr>
             <th scope="row">1</th>
             <td><?php echo $_SESSION['user_name']; ?></td>
-            <td><?php echo $row['products_name']; ?></td>
-            <td><?php echo $row['products__price']; ?></td>
+            <td><?php
+                      if (isset($_GET['name'])){
+                        echo $_GET['name'];
+                      }else{
+                        echo $row['products_name'];
+                      }
+                  ?></td>
+            <td><?php 
+                      if (isset($_GET['price'])){
+                        echo $_GET['price'];
+                      }else{
+                        echo $row['products_price'];
+                      }         
+            
+            ?></td>
             <td> <a href="order-active.php?oparator=plus" class="btn btn-sm btn-primary">+</a>
               <?php echo $_SESSION['quantity'];
                 if ($_SESSION['quantity']==1) {
