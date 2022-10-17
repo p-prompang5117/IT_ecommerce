@@ -59,7 +59,7 @@ body{
           </td>
           <td><?php echo $row['bill_price']; ?></td>
           <td><?php echo $row['bill_result_price']; ?></td>
-          <td><a href="order.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
+          <td><a href="del-products-get.php?id=<?php echo $row['bill_id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
           <td> <input type="checkbox" name="checkorder" id="checkorder" checked> </td>
         </tr>
 
@@ -68,7 +68,7 @@ body{
       }
      ?>
           <th> <input type="submit" class="btn btn-sm btn-primary" value="ยืนยันการซื้อ"> </th>
-          <th> <input type="submit" class="btn btn-sm btn-danger" value="ลบสินค้่าทั้งหมด"> </th>
+          <th>  <a href="ordet-buy-success.php" class="btn btn-danger" id="buy">ลบสินค้า</a> </th>
 
 </tbody>
 </table>
